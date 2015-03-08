@@ -28,7 +28,8 @@ int		main(int ac, char **av)
 	gest_error(tab);
 	if (check_sort(tab))
 	{
-		ft_putendl(C_GREEN"Liste déja trier !");
+		ft_putstr(C_GREEN);
+		ft_putendl("Liste deja triee !");
 		return (1);
 	}
 	str = fn_tri(tab, flag);

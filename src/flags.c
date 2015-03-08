@@ -12,7 +12,7 @@
 
 #include <push_swap.h>
 
-char	*ft_strcolor(char *str)
+char		*ft_strcolor(char *str)
 {
 	char	*ch;
 	int		i;
@@ -21,7 +21,7 @@ char	*ft_strcolor(char *str)
 	if (!ft_strrchr(str, ' '))
 		ch = str;
 	else
-		ch = ft_strrchr(str, ' ') ;
+		ch = ft_strrchr(str, ' ');
 	i = ch - str;
 	ch = ft_strjoin(C_MAGENTA, ch);
 	ch = ft_strjoin(ch, C_NONE);
@@ -36,7 +36,7 @@ char	*ft_strcolor(char *str)
 	return (str);
 }
 
-void	affiche(t_tab *l_a, t_tab *l_b, char *str, int flag)
+void		affiche(t_tab *l_a, t_tab *l_b, char *str, int flag)
 {
 	char	*ch;
 
@@ -57,7 +57,7 @@ void	affiche(t_tab *l_a, t_tab *l_b, char *str, int flag)
 	ft_putchar('\n');
 }
 
-void	gest_error(t_tab *tab)
+void		gest_error(t_tab *tab)
 {
 	int		x;
 	int		a;
@@ -74,7 +74,8 @@ void	gest_error(t_tab *tab)
 			tab = tab->next;
 		if (x == tab->x && test != tab)
 		{
-			ft_putendl(C_RED"Error");
+			ft_putstr(C_RED);
+			ft_putendl("Error");
 			exit(0);
 		}
 		tab = tab->next;
@@ -84,7 +85,8 @@ void	gest_error(t_tab *tab)
 		a++;
 	}
 }
-void	affiche_a(t_tab *l_a)
+
+void		affiche_a(t_tab *l_a)
 {
 	ft_putstr("l_a : ");
 	if (l_a)
@@ -102,7 +104,7 @@ void	affiche_a(t_tab *l_a)
 	}
 }
 
-void	affiche_b(t_tab *l_b)
+void		affiche_b(t_tab *l_b)
 {
 	ft_putstr("\nl_b : ");
 	if (l_b)

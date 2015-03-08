@@ -35,7 +35,8 @@ t_tab		*fn_send(t_tab **l_a, t_tab *l_b)
 		tab = (*l_a)->prev;
 		(*l_a)->prev = (*l_a)->prev->prev;
 		(*l_a)->prev->next = tab->next;
-		tab->next = tab->prev = NULL;
+		tab->prev = NULL;
+		tab->next = tab->prev;
 	}
 	else
 	{
@@ -44,10 +45,7 @@ t_tab		*fn_send(t_tab **l_a, t_tab *l_b)
 	}
 	if (!l_b)
 	{
-		l_b = tab;
-		l_b->next = NULL;
-		l_b->prev = NULL;
-		l_b->deb = l_b;
+		l_b = fn_send_c(tab, l_b);
 	}
 	else
 		l_b = fn_send_b(tab, l_b);
@@ -94,7 +92,7 @@ t_tab		*last_rot(t_tab *tab)
 	return (tmp);
 }
 
-t_tab	*fn_send_b(t_tab *tab, t_tab *l_b)
+t_tab		*fn_send_b(t_tab *tab, t_tab *l_b)
 {
 	l_b = l_b->deb;
 	if (!l_b->prev)
@@ -105,5 +103,5 @@ t_tab	*fn_send_b(t_tab *tab, t_tab *l_b)
 	tab->next = l_b;
 	tab->prev->next = tab;
 	l_b = last_rot(l_b);
-	return(l_b);
+	return (l_b);
 }

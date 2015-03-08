@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   spaces.c                                             :+:      :+:    :+:   */
+/*   spaces.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpueo--g <gpueo--g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include <push_swap.h>
 
-char	*delete_spaces(char *str)
+char		*delete_spaces(char *str)
 {
 	int		i;
 
@@ -25,7 +25,7 @@ char	*delete_spaces(char *str)
 	return (str);
 }
 
-char	*fn_strchange(char *str, int i, int n)
+char		*fn_strchange(char *str, int i, int n)
 {
 	int		x;
 	int		j;
@@ -44,7 +44,7 @@ char	*fn_strchange(char *str, int i, int n)
 	return (str);
 }
 
-char	**decaler(char **av)
+char		**decaler(char **av)
 {
 	int		i;
 
@@ -56,4 +56,13 @@ char	**decaler(char **av)
 	}
 	av[i] = NULL;
 	return (av);
+}
+
+t_tab		*fn_send_c(t_tab *tab, t_tab *l_b)
+{
+	l_b = tab;
+	l_b->next = NULL;
+	l_b->prev = NULL;
+	l_b->deb = l_b;
+	return (l_b);
 }

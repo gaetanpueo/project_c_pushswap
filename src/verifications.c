@@ -24,13 +24,15 @@ char	**verif_flag(int *ac, char **av, int *flag)
 		}
 		else if (!ft_isdigit(av[1][1]))
 		{
-			ft_putendl(C_RED"Error");
+			ft_putstr(C_RED);
+			ft_putendl("Error");
 			exit(1);
 		}
 	}
 	else if (!ft_isdigit(av[1][0]))
 	{
-		ft_putendl(C_RED"Error");
+		ft_putstr(C_RED);
+		ft_putendl("Error");
 		exit(1);
 	}
 	return (av);
@@ -46,7 +48,8 @@ char	**flag_search(int *flag, char **av)
 		*flag = 3;
 	else
 	{
-		ft_putendl(C_RED"Error");
+		ft_putstr(C_RED);
+		ft_putendl("Error");
 		exit(1);
 	}
 	av = decaler(av);

@@ -23,13 +23,12 @@ t_tab	*creation(t_tab *tab, int ac, char **av)
 	{
 		tmp = init_tmp(tmp, av, i);
 		if (!tab)
-			tmp2 = tab = tmp;
-		else
 		{
-			tmp2->next = tmp;
-			tmp2->next->prev = tmp2;
-			tmp2 = tmp2->next;
+			tab = tmp;
+			tmp2 = tab;
 		}
+		else
+			tmp2 = creation_b(tmp2, tmp);
 		tmp->deb = tab;
 		i++;
 		if (i < ac)
@@ -38,6 +37,14 @@ t_tab	*creation(t_tab *tab, int ac, char **av)
 	tab->prev = tmp;
 	tmp->next = tab;
 	return (tab);
+}
+
+t_tab	*creation_b(t_tab *tmp2, t_tab *tmp)
+{
+	tmp2->next = tmp;
+	tmp2->next->prev = tmp2;
+	tmp2 = tmp2->next;
+	return (tmp2);
 }
 
 char	*raccourci(char *str)

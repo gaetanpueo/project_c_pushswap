@@ -12,7 +12,7 @@
 
 #include <push_swap.h>
 
-void	verif_num(char **av)
+void		verif_num(char **av)
 {
 	int		i;
 	long	num;
@@ -24,14 +24,15 @@ void	verif_num(char **av)
 		num = ft_atoli(av[i]);
 		if (num >= 2147483647 || num <= -2147483647)
 		{
-			ft_putendl(C_RED"Error");
+			ft_putstr(C_RED);
+			ft_putendl("Error");
 			exit (0);
 		}
 		i++;
 	}
 }
 
-int		check_sort(t_tab *tab)
+int			check_sort(t_tab *tab)
 {
 	int		x;
 
@@ -48,7 +49,7 @@ int		check_sort(t_tab *tab)
 	return (1);
 }
 
-int		ft_max(t_tab *tab)
+int			ft_max(t_tab *tab)
 {
 	int		max;
 
@@ -64,7 +65,7 @@ int		ft_max(t_tab *tab)
 	return (max);
 }
 
-int		ft_min(t_tab *tab)
+int			ft_min(t_tab *tab)
 {
 	int		min;
 
@@ -80,7 +81,7 @@ int		ft_min(t_tab *tab)
 	return (min);
 }
 
-void	display_2(int flag, char *str)
+void		display_2(int flag, char *str)
 {
 	if (flag == 1 || !flag)
 	{

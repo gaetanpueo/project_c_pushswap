@@ -68,7 +68,6 @@ t_tab	*fn_list_2(t_tab *l_b, char **str, int *i, int *a)
 t_tab	*fn_list_1(t_tab *l_a, int *a, char **str)
 {
 	l_a = l_a->deb;
-
 	if (l_a->x > l_a->next->x)
 	{
 		*str = ft_strjoin(*str, "sa ");
