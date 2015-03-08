@@ -52,5 +52,6 @@ t_tab					*fn_list_1		(t_tab *l_a, int *a, char **str);
 t_tab					*fn_back		(t_tab *l_a, t_tab **l_b, char **str, int *i);
 void					display			(int flag, t_tab *l_a, t_tab *l_b, char *str);
 void					display_2		(int flag, char *str);
+void					verif_num		(char **av);
 
 #endif

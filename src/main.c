@@ -21,6 +21,7 @@ int		main(int ac, char **av)
 	if (ac == 1)
 		return (1);
 	ac--;
+	verif_num(av);
 	tab = NULL;
 	av = verif_flag(&ac, av, &flag);
 	tab = creation(tab, ac, av);

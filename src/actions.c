@@ -12,6 +12,25 @@
 
 #include <push_swap.h>
 
+void	verif_num(char **av)
+{
+	int		i;
+	long	num;
+
+	i = 1;
+	num = 0;
+	while (av[i])
+	{
+		num = ft_atoli(av[i]);
+		if (num >= 2147483647 || num <= -2147483647)
+		{
+			ft_putendl(C_RED"Error");
+			exit (0);
+		}
+		i++;
+	}
+}
+
 int		check_sort(t_tab *tab)
 {
 	int		x;
